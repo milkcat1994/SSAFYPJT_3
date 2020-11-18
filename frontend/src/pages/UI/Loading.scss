@@ -1,0 +1,76 @@
+@import '../../base.scss';
+
+.overlay {
+  @extend .flex-center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000be;
+  z-index: 90;
+}
+
+.msg-card {
+  @include retro-border;
+  max-width: 500px;
+  width: 300px;
+  padding: 0;
+  animation: doki 150ms ease-in 100ms 1;
+  z-index: 99;
+
+  &-header {
+    background-image: $gradient-header;
+    color: white;
+    padding: 5px 15px;
+    font-size: 13px;
+  }
+
+  &-text {
+    margin: 10px;
+    min-height: 20px;
+    font-size: 12px;
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+  }
+
+  .loading-block {
+    width: 13px;
+    height: 20px;
+    margin: 4px 1px;
+    background-color: $color-2;
+    opacity: 0;
+    animation-name: loading-block;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        // animation-duration: #{3000 - ($i * 200)}ms;
+        animation-duration: 1500ms;
+        animation-delay: $i * 40ms;
+      }
+    }
+
+    &-wrap {
+      display: flex;
+    }
+  }
+}
+
+@keyframes loading-block {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+}
+
+@media screen and (min-width: 1000px) {
+  .msg-card-wrap {
+    width: 1000px;
+    height: 300px;
+  }
+}

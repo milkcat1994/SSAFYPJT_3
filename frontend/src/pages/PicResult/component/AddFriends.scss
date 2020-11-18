@@ -1,0 +1,69 @@
+@import '../../../base.scss';
+
+.add-friends {
+  @include retro-border;
+  margin: 30px auto 80px;
+
+  .face-wrap {
+    color: black;
+  }
+}
+
+.add-friend-btn {
+  @extend .base-face;
+}
+
+.fname-input-wrap {
+  position: relative;
+  left: 100px;
+  display: flex;
+
+  .base-btn {
+    width: 40px !important;
+    margin-left: 5px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.fname-input {
+  width: 150px;
+  height: 30px;
+  overflow-x: hidden;
+  border: none;
+  border-bottom: 2px solid #333333;
+  background: white;
+}
+
+.fname-input-btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.face-name {
+  width: 60px;
+  margin-top: 5px;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 12px;
+}
+
+.friend-face-grid {
+  @extend .face-grid;
+  @include retro-border-active;
+}
+
+.section-title {
+  padding: 5px 10px 10px;
+}
+
+@media screen and (max-width: 350px) {
+  .fname-input {
+    width: 100px;
+
+    &-wrap {
+      left: 50px;
+    }
+  }
+}

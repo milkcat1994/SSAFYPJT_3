@@ -1,0 +1,162 @@
+@import '../../../base.scss';
+
+@keyframes scroll-down {
+  0% { height: 0; }
+  99% { height: 220px; }
+  100% { height: auto; }
+}
+
+@keyframes scroll-down2 {
+  0% { height: 0; }
+  99% { height: 400px; }
+  100% { height: auto; }
+}
+
+.welcome {
+  @include retro-border-active;
+  padding: 40px 15px 0px;
+  overflow-y: hidden;
+  // animation: scroll-down 800ms ease 500ms forwards;
+  
+  h1 {font-family: 'Press Start 2P', cursive; font-size: 24px;}
+  ul {list-style: square;}
+  .list-item {
+    margin: 30px 0;
+
+    p {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    &:hover {cursor: pointer;}
+  }
+
+  .content-area {
+    max-height: 50vh;
+    overflow-y: scroll;
+    background-color: #f0efe9;
+    padding: 20px;
+  }
+}
+
+.welcome-item {
+  font-size: 13px;
+  word-wrap: normal;
+  ul { 
+    padding-left: 15px;
+    line-height: 20px;
+
+    li {
+      margin: 10px auto;
+      // font-size: 13px;
+    }
+  }
+}
+
+.feature {
+  text-align: center;
+  margin: 20px;
+  font-size: 12px;
+}
+
+.example-face {
+  @include retro-border-active;
+  width: 100px;
+  height: 100px;
+
+  &-grid {
+    @extend .face-grid;
+    grid-template-columns: repeat(auto-fill, 120px);
+    padding: 0;
+  }
+}
+
+.Welcome-item2 {
+  img {
+    margin: 10px auto;
+  }
+}
+
+.example-img1 {
+  @include retro-border-active;
+  width: 250px;
+}
+
+.example-img-wrap1 {
+  margin: auto;
+  text-align: center;
+} 
+
+.team-img {
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+}
+
+.back-btn {
+  color: blue;
+  // text-align: right;
+  margin-bottom: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.copyright {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  color: #888888;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.source {
+  // font-family: 'Times New Roman', Times, serif;
+  margin-top: 15px;
+  font-size: 11px;
+  color: #888888;
+}
+
+@media screen and (min-width: 700px) {
+  .example-img-wrap1 {
+    display: flex;
+    justify-content: space-evenly;
+  } 
+}
+
+
+@media screen and (min-width: 1000px) {
+  .welcome-wrap {
+    max-width: 800px;
+    margin: auto; 
+  }
+
+  .welcome-item {
+    li { font-size: 1rem;}
+  }
+
+  .welcome-text {
+    font-size: 1rem;
+  }
+
+  .home-image-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .example-img-wrap1 {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+
+  .example-img1 {
+    width: 300px;
+    margin: 10px 20px;
+  }
+  .example-face {
+    width: 100px;
+    height: 100px;
+  }
+}

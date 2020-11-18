@@ -1,0 +1,51 @@
+.pic-result {
+  .pic-area {
+    margin: 0 auto;
+  }
+}
+
+.btn-wrap2 {
+  max-width: 500px;
+  margin: auto;
+  padding: 5px 0 10px;
+  .base-btn {
+    margin-bottom: 5px;
+  }
+}
+
+.show-on-PC {
+  display: none;
+}
+.hide-on-PC {
+  display: inherit;
+}
+
+@media screen and (min-width: 1000px) {
+  
+  .legend {
+    margin: 0;
+    padding: 10px;
+    background: none;
+    border: 2px solid white;
+    box-shadow: -1px -1px #333333;
+  }
+
+  .pic-result {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto 30px;
+    .pic-area { margin: 0}
+  }
+  .show-on-PC {
+    display: inherit;
+    margin: 10px 0 !important;
+  }
+  .hide-on-PC {
+    display: none;
+  }
+  .btn-wrap2 {
+    @extend .legend;
+    width: 300px;
+    // margin: 0 20px 30px;
+  }
+}

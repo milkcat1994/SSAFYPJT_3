@@ -1,0 +1,165 @@
+@import '../../../base.scss';
+$color-run: #333333;
+$color-run-l: lighten($color-run, 10%);
+$color-run-d: darken($color-run, 20%);
+
+.pic-edit {
+  font-size: 13px;
+
+  .image-area-wrap {
+    position: relative;
+    height: 100%;
+  }
+  .menu-wrap {
+    margin: 30px 20px;
+  }
+
+  .menu-item {
+    @extend .flex-center;
+    @include retro-border;
+    height: 35px;
+    padding: 0 15px 4px;
+    margin-right: 2px;
+    border-top-left-radius: 5px;
+    border-bottom: none;
+    box-shadow: none;
+    text-align: left;
+    font-size: 13px;
+    z-index: 4;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &-active {
+      z-index: 6;
+    }
+
+    &-wrap {
+      display: flex;
+    }
+  }
+
+  .menu-detail-wrap {
+    @include retro-border;
+    position: relative;
+    top: -4px;
+    padding: 10px;
+    z-index: 5;
+  }
+
+  .run-button {
+    @extend .base-btn;
+    margin-top: 15px;
+    height: 40px;
+    border-color: $color-run-l $color-run-d $color-run-d $color-run-l ;
+    background-color: $color-run;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.pic-edit-faces {
+  @extend .face-grid;
+  @include retro-border-active;
+
+  &-legend {
+    @extend .legend;
+    margin: 10px 0;
+  }
+
+  .face-img-wrap {
+    @extend .base-face;
+    position: relative;
+  }
+
+  .face-name {
+    width: 60px;  
+    word-wrap: break-word;
+    text-align: center;
+    font-size: 12px;
+  }
+  .face-wrap {
+    color: lightgrey;
+    
+    .face-img-wrap {
+      border-color: lightgrey;
+
+      &:active {
+        animation: chewy 150ms;
+      }
+    }
+  }
+
+  .face-selected {
+    color: black;
+    .face-img-wrap {
+      border: 1px solid red;
+      box-shadow: 0 0 2px red;
+    }
+  }
+}
+
+.sticker {
+  @extend .base-face;
+  position: relative;
+  border-color: lightgrey;
+
+  .sticker-delete-btn {
+    @extend .flex-center;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    border: 2px solid red;
+    background: red;
+    color: red; 
+    font-weight: bolder;
+    box-shadow: 1px 1px 2px grey;
+
+    div {
+      border-bottom: 3px solid white;
+      width: 100%;
+    }
+  }
+}
+
+.sticker-grid {
+  @extend .face-grid;
+  @include retro-border-active;
+  background: $color-base-l;
+  max-height: 130px;
+  overflow-y: scroll;
+}
+
+.sticker-selected {
+  border-color: green !important;
+  box-shadow: 0 0 3px lawngreen;
+  animation: chewy 150ms;
+}
+
+.sticker-type-btn {
+  @extend .base-btn;
+  flex-grow: 1;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .pic-edit {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px auto 20px  ;
+
+    .menu-wrap {
+      width: 500px;
+      margin-top: 0;
+      // min-height: 500px;
+    }
+  }
+}

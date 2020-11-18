@@ -1,0 +1,29 @@
+@import '../../base';
+
+.header {
+  @extend .flex-between;
+  margin: auto;
+  padding: 0px;
+  color: white;
+  background: $gradient-header;
+}
+
+.service-name {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.logo {
+  @extend .flex-center;
+  margin: 5px;
+  font-size: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+}

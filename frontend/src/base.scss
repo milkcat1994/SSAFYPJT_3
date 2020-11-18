@@ -1,0 +1,265 @@
+@font-face{
+  font-family: "Neodgm";
+  font-weight: 300;
+  src: url("./assets/neodgm.ttf") format("truetype"),
+    url("./assets/neodgm.woff") format("woff"),
+    url("./assets/neodgm.woff2") format("woff2"),
+    ;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+// font-family: 'Press Start 2P', cursive;
+
+// color
+$color-1: #63bbb1;
+$color-2: #6399eb;
+$color-active-green: rgb(26, 243, 160);
+$color-base: rgb(230, 230, 230);
+$color-base-l: lighten($color-base, 10%);
+$color-base-d: darken($color-base, 20%);
+$color-danger: rgb(187, 48, 24);
+$gradient-header: linear-gradient(to left, rgb(44, 133, 250), rgb(40, 40, 82));
+
+// mixins
+@mixin retro-border {
+  border-width: 4px;
+  border-style: solid;
+  border-color: $color-base-l $color-base-d $color-base-d $color-base-l;
+  background-color: $color-base;
+  color: black;
+  box-shadow: 1px 1px 2px #333333;
+}
+
+@mixin retro-border-active {
+  border-width: 4px;
+  border-style: solid;
+  border-color: $color-base-d $color-base-l $color-base-l $color-base-d;
+  background-color: lighten($color-base, 15%);
+  color: black;
+}
+
+// animations
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 100;}
+}
+
+@keyframes chewy {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+
+@keyframes doki {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes show-window {
+  99% {
+    width: 100%;
+    height: 490px;
+  }
+  100% {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+  }
+}
+
+
+// class
+// class : style fragment
+.flex {
+  display: flex;  
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.font-blue {
+  color: blue !important;
+}
+
+.font-red {
+  color: red !important;
+}
+
+.hide-on-PC {
+}
+
+// class : UI element
+.base-btn {
+  @include retro-border;
+  @extend .flex-center;
+  min-width: 50px;
+  padding: 5px 10px;
+  font-size: 12px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    @include retro-border-active;
+    animation-name: chewy;
+    animation-duration: 100ms;
+  }
+}
+
+.base-btn-icon {
+  @extend .base-btn;
+  margin: 0 2px;
+  min-width: 24px;
+  padding: 0;
+  height: 24px;
+  border-width: 2px !important;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.btn-wrap {
+  padding: 5px 0 10px;
+
+  div {
+    margin-bottom: 5px;
+  }
+}
+
+.header-btn {
+  @extend .base-btn-icon;
+  min-width: 16px;
+  height: 16px;
+}
+
+.base-face {
+  // @include retro-border-active;
+  @extend .flex-center;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  border: 1px solid black;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+.legend {
+  margin: 10px;
+  padding: 10px;
+  background: none;
+  border: 2px solid white;
+  box-shadow: -1px -1px #333333;
+}
+
+.divider {
+  margin: 5px 0;
+  height: 0px;
+  border-top: 2px solid $color-base-d;
+  border-bottom: 2px solid $color-base-l;
+}
+
+.base-header {
+  @extend .flex-between;
+  padding: 0 5px;
+  background-image: $gradient-header;
+  min-height: 30px;
+  color: white;
+}
+
+.pic-area {
+  @include retro-border-active;
+  min-width: 300px;
+  max-width: 500px;
+  height: 100%;
+  margin: 0 auto;
+
+  .img-wrap { 
+    position: relative;
+    border-top: 3px solid #555555;
+    border-left: 3px solid #555555;    
+
+    .face-box {
+      position: absolute;
+    }
+  }
+
+  img {
+    margin-bottom: -4px;
+    width: 100%;
+  }
+}
+
+.face-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 70px);
+  row-gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  justify-items: center;
+}
+
+.base-face-grid {
+  @include retro-border-active;
+}
+
+.chewy:active {
+  animation: chewy 150ms;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+
+  .btn-wrap {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px 20px;
+
+    div {
+      margin: 0;
+      margin-left: 5px;
+    }
+  }
+
+  .pic-area {
+    margin: 0 20px;
+    width: 500px;
+  }
+
+  .btn-108 {
+    width: 108px;
+  }
+    
+  .hide-on-PC {
+    display: none;
+  }
+}
