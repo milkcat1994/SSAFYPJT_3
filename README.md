@@ -203,7 +203,7 @@ gantt
 
 
 
-📷 프로젝트 영상 : https://www.youtube.com/watch?v=97YLNTS6HaQ&feature=youtu.be
+📷 프로젝트 영상 : https://youtu.be/Ki_Ag9Z8JYc
 
 
 :memo: Jenkins : http://k3a207.p.ssafy.io:8181/
