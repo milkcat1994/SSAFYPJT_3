@@ -1,9 +1,16 @@
+<img src="https://user-images.githubusercontent.com/18321002/99801227-05023500-2b79-11eb-93c6-7af736e1ff11.png" width="200" height="200">
+
+## FACE OFF
+![Generic badge](https://img.shields.io/badge/version-1.0.0-blue.svg) ![Generic badge](https://img.shields.io/badge/React-17.0.1-brightgreen.svg) ![Generic badge](https://img.shields.io/badge/TypeScript-4.0.3-brightgreen.svg) ![Generic badge](https://img.shields.io/badge/Sass-4.11.1-brightgreen.svg) ![Generic badge](https://img.shields.io/badge/Django-3.1.2-green.svg) ![Generic badge](https://img.shields.io/badge/TensorFlow-1.14.0-brightgreen.svg) ![Generic badge](https://img.shields.io/badge/Opencv_Python-4.4.0.46-brightgreen.svg) ![Generic badge](https://img.shields.io/badge/MariaDB-10.5.6-blue.svg) ![Generic badge](https://img.shields.io/badge/server-AWS_EC2-9cf.svg) ![Generic badge](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+
 
 ## 📖 프로젝트 소개
 
 `FACE OFF`는 손쉬운 사진 모자이크 웹 어플리케이션입니다.
 
-:house: http://k3a207.p.ssafy.io/
+### 📷 [프로젝트 영상](https://www.youtube.com/watch?v=97YLNTS6HaQ&feature=youtu.be)
+
 
 
 ## :fire: Gantt 
@@ -43,7 +50,7 @@ gantt
 ```
 
 
-### 기획 배경 및 의도
+### :grey_question: 기획 배경 및 의도
 
 - 블로그, 인스타그램 등 이미지 중심 SNS는 일상의 일부로 자리잡았고, 때와 장소를 가리지 않은 사진들이 SNS에 공유되고 있습니다. 이런 사회적 변화와 함께 초상권 침해 피해도 증가하고 있습니다. 방송통신심의위원회의 발표에 따르면 초상권 침해 피해 신고사례는
   2014년 5,017건에서 2018년 1만 건 이상으로 크게 증가하였습니다. 
@@ -54,7 +61,7 @@ gantt
 
 
 
-### 핵심 기능
+### :mag: 핵심 기능
 
 - **자동 얼굴인식**
 
@@ -83,7 +90,7 @@ gantt
 
 
 
-## 드래곤볼 팀 소개
+## :family: 드래곤볼 팀 소개
 
 - `드래곤볼` 이란 7개의 구슬을 모아 소원을 이루어주는 아이템입니다.
 
@@ -233,10 +240,3 @@ gantt
   };
 
   ```
-
-
-📷 [프로젝트 영상](https://www.youtube.com/watch?v=97YLNTS6HaQ&feature=youtu.be)
-
-
-:memo: [Jenkins](http://k3a207.p.ssafy.io:8181/)
-
