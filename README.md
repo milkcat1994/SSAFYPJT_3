@@ -14,40 +14,7 @@
 
 
 ## :fire: Gantt 
-
-```mermaid
-gantt
-    title A Gantt Diagram
-    dateFormat  YYYY-MM-DD
-    section AI
-    AI 기술테스트  : a1, 2020-10-14, 10d
-    가상 얼굴 학습 및 환경세팅  : 2020-10-14, 10d
-    얼굴 인식 개선 및 적용 : a2,after a1, 8d
-    가상 얼굴 이미지 생성 및 분류 : a2,after a1, 4d
-    얼굴 비교: a3, after a2, 5d
-    모자이크 처리 기능:  a4,after a2, 5d
-    UCC 기획 및 제작:  a5,after a4, 7d
-
-    section Front-end
-    와이어프레임     :a1,2020-10-14  , 10d
-    react 학습 및 적용 : a2,after a1,  10d
-    사진 업로드 및 설정 기능 :a2,after a1 , 10d
-    UI ,UX: a3, after a2, 14d
-    이미지 전송 : a4, after a2, 7d
-    Back , AI 연동 : a5,after a4, 6d
-    스타일링 마무리 :  after a5, 1d
-
-    section Back-end
-    django 학습 및 적용 : a1,2020-10-14 , 10d
-    회원기능      :a2,after a1 , 10d
-    친구기능      :after a1  ,10d
-    결과 이미지저장,공유  : after a1  ,10d
-    스티커 기능  : a3,after a1  ,10d
-    이미지 전송 및 저장: a4,after a3, 7d
-    Front 연동 테스트: a5,after a4, 1d
-    UCC 및 Front 보조: a5,after a4, 6d
-    PPT 및 발표준비: a6,after a5, 1d
-```
+![mermaid-diagram-20201120215237](https://user-images.githubusercontent.com/18321002/99802267-c0779900-2b7a-11eb-97df-8fd53db21c6a.png)
 
 
 ### :grey_question: 기획 배경 및 의도
