@@ -9,7 +9,7 @@
 
 `FACE OFF`는 손쉬운 사진 모자이크 웹 어플리케이션입니다.
 
-### 📷 [프로젝트 영상](https://www.youtube.com/watch?v=97YLNTS6HaQ&feature=youtu.be)
+### 📷 [프로젝트 영상](https://youtu.be/Ki_Ag9Z8JYc)
 
 
 
