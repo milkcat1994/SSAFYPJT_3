@@ -1,4 +1,4 @@
-﻿﻿
+
 ## 📖 프로젝트 소개
 
 `FACE OFF`는 손쉬운 사진 모자이크 웹 어플리케이션입니다.
@@ -111,29 +111,63 @@ gantt
 
 ### Frontend
 
-- React.js 
+- React.js  17.0.1
   - 네이티브 앱과 같이 뛰어난 사용성을 제공하는 SPA를 구현하고자 React.js를 채택하였습니다.
-- TypeScript
+- TypeScript 4.0.3
   - 개발의 생산성과 유지보수의 용이성을 위해 타입스크립트를 도입하고자 하였습니다.
-- Sass (Scss)
+- Sass (Scss) 4.11.1
   - 스타일링 측면에서의 개발 생산성을 높이기 위해 Sass를 채택하였습니다.
 
 
 ### Backend
 
-- Django
+- Django 3.1.2
   - TensorFlow와의 결합을 용이하게 하기 위하여 프레임워크로 Django를 채택하였습니다.
-- TensorFlow
-- MariaDB
+- TensorFlow 1.14.0
+- MariaDB 10.5.6
+
+
+
+### AI
+
+##### Face Recognition & Face Classification(얼굴 인식 및 분류)
+
+1. **vgg_face**와 **Keras** 이용한 pre_trained 된 모델을 이용하여 closed set classification로 구성 되어있음
+   - 학습된 데이터에 대해서만 분류가 되어 학습시키지 않은 얼굴 모델의 경우 unknown으로 분류가 되지 않음
+     - closed set이 아닌 open set classification 방식으로 학습 시키지 않는 모델 식별 필요하여 `파기`
+2. **ArcFace**를 이용한 모델 학습으로 학습 되지 않은 부분까지 인지할 수 있음
+   - 학습 시켜야 할 모델의 크기가 너무 크고(100GB) 새로운 얼굴이 등록될 때마다 학습이 이루어 져야 하며, 이용자 별로 모델을 따로 가지고 있어야 하여 `파기`
+3. **OpenCV Face Recognition**에 있는 얼굴 유사도 측정
+   - 이미 잘 알려져있는 방법으로 가볍고 빠르다고 판단하여 `선택`
+
+
+
+##### Face Landmark (얼굴 특성 좌표점)
+
+1. **OpenCV**를 이용하여 사용할 수 있는 모델인 mmod_human_face_detector.dat와 shape_predictor_68_face_landmarks.dat 를 이용하여 얼굴 인식 및 Landmark생성
+   - 옆모습 및 각도에 따라 인식률이 현저하게 낮음
+   - 다양한 각도에 대해서도 인식을 하고 Landmark를 만들어 줄 수 있는 모델의 필요성이 있어 `파기`
+2. **3DDFA**라는 Open Source로 기존 학습된 모델을 이용하여 얼굴 인식 및 얼굴 윤곽선의 예측 좌표를 표시
+   - Face Swap을 하는데에 있어 보이지 않는 부분의 윤곽선도 나타내어 추가적인 알고리즘을 대입하여 윤곽선을 거르는 작업이 필요하여 `파기`
+3. **MTCNN**및 **PFLD**를 이용한 얼굴 인식 및 얼굴 Landmark 검출
+   - 2번의 3DDFA와 달리 예측 좌표가 아닌 보이는 Landmark만 표시하여 경계를 구분할 수 있어 `선택`
+
+
+
+##### Face Detection (얼굴 감지)
+
+1. **Wider_Face**를 이용하여 얼굴을 감지
+   - Pre_Trained된 모델을 이용하여 많거나 작은 얼굴까지 모두 사각형 형태로 감지할 수 있음
+   - Face Landmark의 **3DDFA**와 합쳐서 사용할 수 있었지만  **MTCNN**과 **PFLD**를 이용하기로 하여 `파기`
 
 
 
 ### Dev-Ops
 
-- AWS EC2
-- Jenkins
+- AWS EC2 (Ubuntu 18.0.4)
+- Jenkins 2.249.2
   - CI/CD 자동화를 통해 개발 생산성을 높이기 위하여 Jenkins를 도입하였습니다.
-- Docker
+- Docker 19.03.13
   - 배포에서의 용이성을 위하여 Docker를 도입하였습니다.
 
 
@@ -201,10 +235,8 @@ gantt
   ```
 
 
+📷 [프로젝트 영상](https://www.youtube.com/watch?v=97YLNTS6HaQ&feature=youtu.be)
 
 
-📷 프로젝트 영상 : https://youtu.be/Ki_Ag9Z8JYc
-
-
-:memo: Jenkins : http://k3a207.p.ssafy.io:8181/
+:memo: [Jenkins](http://k3a207.p.ssafy.io:8181/)
 

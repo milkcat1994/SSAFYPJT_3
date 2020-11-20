@@ -56,7 +56,7 @@ npm start
 - `Container + Presenter` 패턴을 사용합니다.
 
   - 로직만 처리하는 Container와 화면을 구현하는 Presenter를 구분하여 사용하는 패턴입니다.
-  - Container는 Presenter를 하위 컴포넌트로 갖고, 구현한 로직을 전
+  - Container는 Presenter를 하위 컴포넌트로 갖고, 구현한 로직을 전달합니다.
 
 - Container
   - Container에서 Presenter에 `state`와 `action`을 전달할 때, 각각 `state`, `methods` 객체 안에 저장하여 전달합니다.
@@ -383,12 +383,21 @@ export default editOptions
   npm install classnames @types/classnames
   npm install styled-components
   ```
+  
 - React Social Login
 
   ``` bash
   npm install react-google-login
   npm install react-kakao-login
   ```
+  
+- Axios
+
+  ```bash
+  npm install axios
+  ```
+
+  
 
 
 
